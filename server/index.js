@@ -1,6 +1,7 @@
 const express = require("express")
 const app = express()
-const port = process.env.port || 3000;
+const port = process.env.port || 3000
+0;
 require("dotenv").config();
 //================ Enabling express to use body of the request ================================
 app.use(express.urlencoded({extended:true}))
