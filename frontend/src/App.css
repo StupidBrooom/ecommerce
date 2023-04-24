@@ -1,0 +1,107 @@
+*, ::after, ::before {
+  box-sizing: border-box;
+}
+
+.navbar {
+  background-color: #6610f2;
+  border-bottom: 2px solid #464646;
+  height: 60px;
+  color: white;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+}
+
+.navbar_right {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  margin-right: 10px;
+  text-align: center;
+}
+
+.logo_navbar {
+  width: 150px;
+}
+
+*>:any-link {
+  box-sizing: border-box;
+  text-align: center;
+  color: white;
+  text-align: center;
+  align-items: center;
+  font-family: 'Lucida Console';
+  text-decoration: none;
+}
+
+*>:any-link:hover {
+  color: #a09000;
+}
+
+.cabinet {
+  vertical-align: middle;
+  font-size: 14px;
+  font-weight: 800;
+  color: #fff;
+  border-radius: 26px;
+  background-size: auto 200%;
+  background-image: linear-gradient(0deg, #1293c8 0%, #1fe4f2 51%, #1293c8 100%);
+  background-position: top;
+  padding: 8px 42px;
+  position: relative;  
+  transition: all .4s ease;
+}
+
+.cabinet:hover {
+  color: #fff;
+  background-position: bottom;
+  background-image: linear-gradient(0deg, #1293c8 0%, #1fe4f2 51%, #1293c8 100%);
+}
+
+.cabinetO {
+  vertical-align: middle;
+  font-size: 14px;
+  font-weight: 800;
+  color: #fff;
+  border-radius: 26px;
+  background-size: auto 200%;
+  background-image: linear-gradient(0deg, #ff5f5e 0%, #ffc52f 51%, #ff5f5e);
+  background-position: top;
+  padding: 8px 42px;
+  position: relative;  
+  transition: all .4s ease;
+}
+
+.cabinetO:hover {
+  color: #fff;
+  background-position: bottom;
+  background-image: linear-gradient(0deg, #ff5f5e 0%, #ffc52f 51%, #ff5f5e);
+}
+
+.navbar>:any-link:hover {
+  cursor: pointer;
+}
+
+.form_container {
+    width: 30%;
+    min-width: 300px;
+    margin: 10vh auto;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid gray;
+    padding: 2%;
+    border-radius: 5px;
+}
+
+.splashScreen {
+  background-image: url('https://gspics.org/images/2022/12/01/0X2uaQ.png');
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  text-align: center;
+  color: white;
+  padding: 1em;
+}
