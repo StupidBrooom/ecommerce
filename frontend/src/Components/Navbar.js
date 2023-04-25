@@ -1,16 +1,62 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
+const names = [
+"John",
+"Ben",
+"Kevin",
+"Andrew Tate",
+]
+
+const what = [
+  "Survival Shirt",
+  "Test Shirt",
+  "American patriot T-Shirt",
+  "Test Shirt",
+]
+
+const price = [
+  "11.99  ",
+  "29.99  ",
+  "19.99  ",
+  "29.99  ",
+]
+
+const sendInfo = () => {
+  let temp = []
+  for (let i = 0; i<names.length; i++) {
+    temp.push(`${names[i]} has purchased ${what[i]} for $${price[i]} `) 
+  }
+  return temp
+}
+
 const Navbar = ({isLoggedIn}) => {
 
   return (
-    <div className="navbar">
-    <img src="https://gspics.org/images/2023/04/14/0web2a.png" className="logo_navbar"/>
+<>
+  <div className="navbar">
+  <div className="topbarOne">
+  <img src="https://gspics.org/images/2023/04/14/0web2a.png" className="logo_navbar"/>
     <NavLink 
       to={"/"}
         style={ ({isActive}) => (
       isActive ? linkStyles.activeLink : linkStyles.defaultLink)}>Home
-      </NavLink>
+    </NavLink>
+    <NavLink 
+      to={"/about"}
+        style={ ({isActive}) => (
+      isActive ? linkStyles.activeLink : linkStyles.defaultLink)}>About Us
+    </NavLink>
+    <NavLink 
+      to={"/faq"}
+        style={ ({isActive}) => (
+      isActive ? linkStyles.activeLink : linkStyles.defaultLink)}>FAQ
+    </NavLink>
+  </div>
+  <div className="topbarTwo">
+      <img src="https://gspics.org/images/2023/04/25/0PGdG9.png" className="nUzixName"/>
+  </div>
+  <div className="topbarThree">
       {isLoggedIn===false
       && 
       <div className="navbar_right">
@@ -25,6 +71,7 @@ const Navbar = ({isLoggedIn}) => {
       </NavLink>
       </div>
     }
+  </div>
 {isLoggedIn && 
       <NavLink  
         to="/secret-page"
@@ -40,6 +87,10 @@ const Navbar = ({isLoggedIn}) => {
       </NavLink>}
       
       </div>
+      <div className="runningInfo">
+        <marquee >{sendInfo()}</marquee>
+      </div>
+</>
       );
 }
 

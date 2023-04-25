@@ -45,7 +45,7 @@ const Login = (props) => {
     }
   };
   return (
-    <form дфыы
+    <form
     onSubmit={handleSubmit}
     onChange={handleChange}
     className="form_container"

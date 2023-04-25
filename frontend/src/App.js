@@ -7,6 +7,7 @@ import Login from "./Pages/Login.js";
 import Register from "./Pages/Register.js";
 import SecretPage from "./Pages/SecretPage.js";
 import Navbar from "./Components/Navbar.js";
+import Footer from "./Components/Footer.js";
 import { URL } from "./config";
 
 function App() {
@@ -64,6 +65,7 @@ function App() {
     element ={ !isLoggedIn ? <Navigate to='/' /> : <SecretPage logout={logout}  /> } 
     />
     </Routes>
+    <Footer isLoggedIn={isLoggedIn}/>
     </Router>
     );
 }

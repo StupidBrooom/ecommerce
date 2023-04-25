@@ -4,18 +4,15 @@ import { NavLink } from "react-router-dom";
 const Home = ({isLoggedIn}) => 
 <>
     <div className='splashScreen'>
-        <h1 className='nameWebsite'>Fashion</h1>
-        <h3 className='nameWebsite'>Someone should be the best brand</h3>
+    <div>
+    <img src="https://gspics.org/images/2023/04/25/0PGlBJ.png" className="uzixName"/>
+    </div>
         <div className='regprop'>
             <>
             <NavLink
             to="/login"
-            className="cabinet">
-            Login
-            </NavLink>
-            <NavLink
-            to="/register"
-            className="cabinetO">Register
+            className="cabinetProp">
+            See what's inside!
             </NavLink>
             </>
         </div>
