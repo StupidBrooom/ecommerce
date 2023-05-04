@@ -26,6 +26,8 @@ connecting();
 
 // =============== ROUTES ==============================
 app.use("/users", require("./routes/users.routes"));
+
+
 const path = require('path');
 
 app.use(express.static(__dirname));
