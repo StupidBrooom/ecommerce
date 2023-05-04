@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { URL } from '../config';
-import {useNavigate} from 'react-router-dom'
+import {NavLink, useNavigate} from 'react-router-dom'
 
 const Register = (props) => {
 	const [ form, setValues ] = useState({
+		username: '',
 		email: '',
 		password: '',
 		password2: ''
@@ -22,12 +23,12 @@ const Register = (props) => {
 		e.preventDefault();
 		try {
 			const response = await axios.post(`${URL}/users/register`, {
+				username: form.username,
 				email: form.email,
 				password: form.password,
 				password2: form.password2
 			});
 			setMessage(response.data.message);
-			//console.log(response)
 			if (response.data.ok) {
 				setTimeout(() => {
 					navigate('/login');
@@ -40,19 +41,27 @@ const Register = (props) => {
 
 	return (
 		<form onSubmit={handleSubmit} onChange={handleChange} className="form_container">
+			<label>Username</label>
+			<input name="username" />
+			
 			<label>Email</label>
 			<input name="email" />
 
 			<label>Password</label>
-			<input name="password" />
+			<input name="password" type='password' />
 
 			<label>Repeat password</label>
-			<input name="password2" />
+			<input name="password2" type='password'/>
 
-			<button>register</button>
+			<button className='buttonReg'>Register</button>
 			<div className="message">
 				<h4>{message}</h4>
 			</div>
+			<NavLink
+            to="/login"
+            className="cabinet">
+            Already have an account? Login
+            </NavLink>
 		</form>
 	);
 };

@@ -12,9 +12,16 @@ const Home = ({isLoggedIn}) =>
             <NavLink
             to="/login"
             className="cabinetProp">
-            See what's inside!
+            Go to products
             </NavLink>
             </>
+        </div>
+        <div className='topProduct'>
+          <div className='topProductName'>
+            <h2>The most favourited products of the week</h2>
+          </div>
+          <marquee behavior="slide" direction="left">
+          </marquee>
         </div>
     </div>
 </>;

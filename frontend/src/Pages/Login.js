@@ -1,10 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { URL } from "../config";
-import {useNavigate} from 'react-router-dom'
-// import jwt from 'jsonwebtoken'
-// react-scripts from version 5 shipped with react 18 is not supporting jsonwebtoken so we need to use alternative like jose to decode the JWT token in the client
-import * as jose from 'jose'
+import {NavLink, useNavigate} from 'react-router-dom'
 
 const Login = (props) => {
 
@@ -31,14 +28,11 @@ const Login = (props) => {
       });
       setMessage(response.data.message);
       if (response.data.ok) {
-        // here after login was successful we extract the email passed from the server inside the token 
-        let decodedToken = jose.decodeJwt(response.data.token)
-        // and now we now which user is logged in in the client so we can manipulate it as we want, like fetching data for it or we can pass the user role -- admin or not -- and act accordingly, etc...
-        console.log("Email extracted from the JWT token after login: ", decodedToken.userEmail)
+
         setTimeout(() => {
           props.login(response.data.token);
-          navigate("/secret-page");
-        }, 2000);
+          navigate("/cabinet/account");
+        }, 1000);
       }
     } catch (error) {
       console.log(error);
@@ -53,10 +47,17 @@ const Login = (props) => {
     <label>Email</label>
     <input name="email" />
     <label>Password</label>
-    <input name="password" />
-    <button>login</button>
+    <input name="password" type='password'/>
+    <button className="buttonLog">Login</button>
     <div className="message">
     <h4>{message}</h4>
+    <div className="regLogButton">
+    <NavLink
+            to="/register"
+            className="cabinetO">
+            Don't have an account? Register
+    </NavLink>
+    </div>
     </div>
     </form>
     );

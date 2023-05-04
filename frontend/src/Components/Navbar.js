@@ -16,10 +16,10 @@ const what = [
 ]
 
 const price = [
-  "11.99  ",
-  "29.99  ",
-  "19.99  ",
-  "29.99  ",
+  "11.99",
+  "29.99",
+  "19.99",
+  "29.99",
 ]
 
 const sendInfo = () => {
@@ -70,26 +70,30 @@ const Navbar = ({isLoggedIn}) => {
       className="cabinetO">Register
       </NavLink>
       </div>
+      }
+      {isLoggedIn
+        && 
+      <div>
+      <NavLink
+      to="/cart"
+      className="cabinet">
+      Cart
+      </NavLink>
+      </div>
     }
-  </div>
-{isLoggedIn && 
-      <NavLink  
-        to="/secret-page"
-        style={ ({isActive}) => (isActive ? linkStyles.activeLink : linkStyles.defaultLink)}>
-        Secret
-      </NavLink>}
 
-      {isLoggedIn && 
-      <NavLink  
-        to="/secret-pages"
-        style={ ({isActive}) => (isActive ? linkStyles.activeLink : linkStyles.defaultLink)}>
-        Secret
-      </NavLink>}
-      
+      {isLoggedIn
+        && 
+      <div>
+      <NavLink
+      to="/cabinet"
+      className="cabinet">
+      My profile
+      </NavLink>
       </div>
-      <div className="runningInfo">
-        <marquee >{sendInfo()}</marquee>
-      </div>
+    }
+  </div>     
+</div>
 </>
       );
 }

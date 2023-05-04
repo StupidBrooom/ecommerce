@@ -9,8 +9,16 @@ const Footer = ({isLoggedIn}) => {
 <div className="foooterLogo">
     <img src="https://gspics.org/images/2023/04/25/0PGdG9.png" className="footerIcon"/>
 </div>
-<div>
-    <p>q2eeqwewqeeqw</p>
+<div className="links">
+<NavLink 
+      to={"/news"}>News
+</NavLink>
+<NavLink 
+      to={"/about"}>About us
+</NavLink>
+<NavLink 
+      to={"/cabinet/support"}>Support
+</NavLink>
 </div>
 </div>
 </>);

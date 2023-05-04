@@ -1,9 +1,30 @@
+.App {
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 *, ::after, ::before {
   box-sizing: border-box;
 }
 
+body {
+  font-family: var(--thm-font);
+  color: #8b7f9a;
+  min-height: 100%;
+  font-size: 18px;
+  line-height: 36px;
+  font-weight: 600;
+  letter-spacing: -.02em;
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 .navbar {
-  background-color: #032500;
+  background-color: #000000;
   border-bottom: 2px solid #2e2e2e;
   height: 60px;
   color: white;
@@ -84,19 +105,30 @@
   text-decoration: none;
 }
 
-*>:any-link:hover {
-  color: #a09000;
-}
-
 .cabinet {
   margin-right: 10px;
   vertical-align: middle;
   font-size: 14px;
   font-weight: 800;
-  color: #fff;
+  color: #303030e7;
   border-radius: 26px;
   background-size: auto 200%;
-  background-image: linear-gradient(0deg, #1293c8 0%, #1fe4f2 51%, #1293c8 100%);
+  background-image: linear-gradient(0deg, #ffffff 0%, #f0f0f0 51%, #f7f7f7 100%);
+  background-position: top;
+  padding: 8px 42px;
+  position: relative;  
+  transition: all .4s ease;
+}
+
+.sendStuff {
+  margin-right: 10px;
+  vertical-align: middle;
+  font-size: 14px;
+  font-weight: 800;
+  color: #ffffffe7;
+  border-radius: 26px;
+  background-size: auto 200%;
+  background-image: linear-gradient(0deg, #ffffff 0%, #363232 51%, #534040 100%);
   background-position: top;
   padding: 8px 42px;
   position: relative;  
@@ -107,10 +139,10 @@
   vertical-align: middle;
   font-size: 14px;
   font-weight: 800;
-  color: #fff;
+  color: #303030e7;
   border-radius: 26px;
   background-size: auto 200%;
-  background-image: linear-gradient(0deg, #032500 0%, #064400 51%, #032500 100%);
+  background-image: linear-gradient(0deg, #ffffff 0%, #f0f0f0 51%, #f7f7f7 100%);
   background-position: top;
   padding: 8px 42px;
   position: relative;  
@@ -118,15 +150,15 @@
 }
 
 .cabinetProp:hover {
-  color: #fff;
+  color: #363636;
   background-position: bottom;
-  background-image: linear-gradient(0deg, #032500 0%, #064400 51%, #032500 100%);
+  background-image: linear-gradient(0deg, #ffffff 0%, #cecece 51%, #b6b6b6 100%);
 }
 
 .cabinet:hover {
-  color: #fff;
+  color: #363636;
   background-position: bottom;
-  background-image: linear-gradient(0deg, #1293c8 0%, #1fe4f2 51%, #1293c8 100%);
+  background-image: linear-gradient(0deg, #ffffff 0%, #cecece 51%, #b6b6b6 100%);
 }
 
 .cabinetO {
@@ -180,16 +212,15 @@
   border-top: 2px solid #2e2e2e;
   width: 100%;
   height: 150px;
-  background-color: #032500;
+  background-color: #000000;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   justify-content: left;
-  
+  margin-top: auto;
 }
 
 .footerWrapper div {
   height: 100%;
-  border-right: 1px solid rgb(44, 44, 44);
 }
 
 .foooterLogo {
@@ -197,6 +228,193 @@
 }
 
 .footerIcon {
+  padding-right: 10px;
+  width: 120%;
+  height: 90%;
+}
+
+.links {
+  font-size: 14px;
   width: 100%;
-  height: 80%;
+  text-align: center;
+  align-items: center;
+  grid-template-columns: 1fr 1fr;
+  display: grid;
+}
+
+.topProduct {
+  align-items: center;
+  text-align: center;
+  margin: auto;
+  border-radius: 15px;
+  width: 80%;
+  height: 30%;
+  background-image: linear-gradient(0deg, #a7a7a7 0%, #a5a5a5 1%, #222222 100%);
+}
+
+
+.form_container {
+	width: 30%;
+	min-width: 300px;
+	margin: 10vh auto;
+	display: flex;
+	flex-direction: column;
+	border: 1px solid gray;
+	padding: 2%;
+	border-radius: 5px;
+}
+
+label , input {
+	margin: 3% 0;
+	padding: 3%;
+}
+
+.buttonReg {
+  cursor: pointer;
+	background-color: black;
+	color: white;
+	font-size: 1em;
+	margin: 5% 0;
+	outline: none;
+	padding: 1em;
+	border-radius: 5px;
+}
+
+.buttonReg:hover {
+  background-color: rgb(126, 126, 126);
+}
+
+
+.buttonLog {
+  cursor: pointer;
+	background-color: black;
+	color: white;
+	font-size: 1em;
+	margin: 5% 0;
+	outline: none;
+	padding: 1em;
+	border-radius: 5px;
+}
+
+.buttonLog:hover {
+  background-color: rgb(126, 126, 126);
+}
+
+.cabinetWrapper {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  vertical-align: auto;
+  justify-content: center;
+  height: 100vh;
+}
+
+.selectableMenu {
+  text-align: center;
+  height: 95%;
+  border-radius: 1%;
+  width: 20%;
+  border: 1px solid rgb(43, 43, 43);
+  background-color: #ffffffe1;
+}
+
+.selectedWrapper {
+  height: 90%;
+  width: 60%;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  color: rgb(0, 0, 0);
+  border-top-right-radius: 1%;
+  border-bottom-right-radius: 1%;
+  background-color: #ffffffe1;
+  border-top: 1px solid rgb(43, 43, 43);
+  border-bottom: 1px solid rgb(43, 43, 43);
+  border-right: 1px solid rgb(43, 43, 43);
+}
+
+.menuThing {
+  width: 100%;
+  height: 40px;
+  border-radius: 5%;
+  margin-top: 15px;
+  text-align: center;
+  align-items: center;
+  color: white;
+  background-color: #000000de;
+}
+
+.menuThing:hover {
+  border-radius: 15%;
+  background-color: #797979;
+  cursor: pointer;
+}
+
+
+.menuThingChoosen {
+  width: 100%;
+  height: 40px;
+  border-radius: 15%;
+  margin-top: 15px;
+  text-align: center;
+  align-items: center;
+  color: white;
+  background-color: #797979;
+  cursor: pointer;
+}
+
+.currentBoard {
+  display: flex;
+  justify-content: space-between;
+  text-align: left;
+  margin-top: 5px;
+  border: 1px solid #414141;
+  width: 100%;
+  color: white;
+  background-color: #161616;
+}
+
+.changeThing {
+    margin-right: 10px;
+    vertical-align: middle;
+    font-size: 14px;
+    font-weight: 800;
+    color: #000000;
+    border-radius: 5px;
+    background-size: auto 200%;
+    background-image: linear-gradient(0deg, #ffffff 0%, #ffffff 51%, #ffffff 100%);
+    background-position: top;
+    padding: 8px 42px;
+    position: relative;  
+    transition: all .4s ease;
+}
+
+.logout_cabinet {
+  width: 100%;
+  height: 40px;
+  border-radius: 5%;
+  margin-top: 15px;
+  text-align: center;
+  align-items: center;
+  color: white;
+  background-color: #b60000;
+  cursor: pointer;
+}
+
+.defaultPageFAQ, .defaultPageAboutUS {
+  min-height: 100vh;
+}
+
+.changyThingy {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  background-color: #000000;
+  height: 10%;
+}
+
+.changyThingy>input {
+  height: 1%;
+  width: 290px;
 }
