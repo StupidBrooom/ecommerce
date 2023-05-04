@@ -22,7 +22,7 @@ async function connecting() {
     );
   }
 }
-connecting();
+
 
 // =============== ROUTES ==============================
 app.use("/users", require("./routes/users.routes"));
@@ -37,4 +37,4 @@ app.get('/*', function (req, res) {
   res.sendFile(path.join(__dirname, '../frontend/build', 'index.html'));
 });
 // =============== START SERVER =====================
-app.listen(port, () => console.log(`server listening on port ${port}`));
+connecting().then(app.listen(port, () => console.log(`server listening on port ${port}`)))
