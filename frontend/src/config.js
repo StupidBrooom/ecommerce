@@ -1,3 +1,3 @@
-const URL = `http://localhost:4000`;
+const URL = `https://weak-rose-jaguar-robe.cyclic.app`;
 
 export { URL };
