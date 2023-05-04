@@ -10,8 +10,8 @@ const cors = require("cors");
 app.use(cors());
 // =============== DATABASE CONNECTION =====================
 const mongoose = require("mongoose");
-// to print incoming requests from mongoose in the terminal
-mongoose.set('debug',true)
+
+
 async function connecting() {
   try {
     await mongoose.connect(process.env.MONGO);
